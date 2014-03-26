@@ -10,6 +10,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
+
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
@@ -25,7 +26,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
 
     // the pet tab has its own child nav-view and history
     .state('tab.pet-index', {
-      url: '/pets',
+      url: '/pet/:petId',
       views: {
         'pets-tab': {
           templateUrl: 'templates/pet-index.html',
@@ -33,9 +34,17 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
         }
       }
     })
-
+ .state('tab.post-index', {
+      url: '/post/:petId',
+      views: {
+        'pets-tab': {
+          templateUrl: 'templates/post-index.html',
+          controller: 'PostIndexCtrl'
+        }
+      }
+    })
     .state('tab.pet-detail', {
-      url: '/pet/:petId',
+      url: '/petsss/:petId',
       views: {
         'pets-tab': {
           templateUrl: 'templates/pet-detail.html',
@@ -63,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/pets');
+  $urlRouterProvider.otherwise('/tab/pet/0');
 
 });
 
