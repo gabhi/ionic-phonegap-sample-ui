@@ -1,6 +1,24 @@
 // A simple controller that shows a tapped item's data
-angular.module('starter.controllers').controller('PetDetailCtrl', function($scope, 
-	$stateParams, PetService) {
-    // "Pets" is a service returning mock data (services.js)
-    $scope.pet = PetService.get($stateParams.petId);
+angular.module('starter.controllers').controller('CatchAllController', function($scope,$http,
+    $stateParams, PetService) {
+
+
+    $scope.sendEmail = function() {
+        $http({
+            method: 'post',
+            url: 'http://gabhi.com/feedback.php',
+            data: {
+                'email': $scope.email,
+                'name': $scope.name,
+                'feedback': $scope.feedback
+
+            }
+        }).
+        success(function(data, status) {
+
+        }).
+        error(function(data, status) {
+
+        });
+    };
 });
