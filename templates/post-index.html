@@ -6,12 +6,16 @@
 <ion-view title={{}}>
     <ion-content has-header="true" has-tabs="true">
 
+<div class="card">
+            <div class="item item-text-wrap">
+            	{{mypost.post_title}}
 
+            </div></div>
 
         <div class="card">
             <div class="item item-text-wrap">
                 <div class="button-bar">
-                    <a class="button">Solution</a>
+                    <a class="button active">Solution</a>
 
                     <a ng-href="mailto:{{email.address}}?subject={{email.subject}}&body={{email.body}}" class="button">
                         Help Me<i class="icon-envelope"></i>
