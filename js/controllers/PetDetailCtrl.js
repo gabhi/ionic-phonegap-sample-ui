@@ -10,18 +10,20 @@ console.log(user);
 
     $scope.sendEmail = function(user) {
         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-        console.log("ddddd");
-        console.log(user.name+user.email+user.feedback);
-        $http.post(
-            
-           'http://gabhi.com/feedback.php',
-            {
+        //console.log("ddddd");
+        //console.log(user.name+user.email+user.feedback);
+
+
+        $http({
+    url: 'http://gabhi.com/feedback.php', 
+    method: "GET",
+    params: {
                 'email': user.email,
                 'name': user.name,
                 'feedback': user.feedback
 
             }
-        ).
+ }).
         success(function(data, status) {
           //  alert("Thank you");
           console.log(data);
