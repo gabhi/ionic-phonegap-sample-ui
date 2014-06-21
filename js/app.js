@@ -26,7 +26,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
 
     // the pet tab has its own child nav-view and history
     .state('tab.pet-index', {
-        url: '/pet/:petId',
+        url: '/pet/:petId?catName',
         views: {
             'pets-tab': {
                 templateUrl: 'templates/pet-index.html',
@@ -35,7 +35,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
         }
     })
         .state('tab.post-index', {
-            url: '/post/:petId',
+            url: '/post/:petId?catName',
             views: {
                 'pets-tab': {
                     templateUrl: 'templates/post-index.html',
